@@ -1,0 +1,96 @@
+h4 {
+  background-color: #006699;
+  color: #fff;
+  padding: 4px;
+  font-size: 14px;
+  margin-top: 0;
+  font-family: Helvetica;
+  padding: 15px;
+
+}
+
+#train-form {
+	margin-left: 25px;
+}
+
+.trains {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #006699;
+}
+
+.addTrain {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #006699;
+}
+
+#subTrain {
+	margin-bottom: 5px;
+	color: #fff;
+	background-color: #006699;
+	height: 35px;
+	width: 65px;
+	font-size: 16px;
+	font-family: Helvetica;
+
+
+}
+
+.input {
+	width: 97%;
+	height: 20px; 
+	font-size: 14px;
+	font-family: Helvetica;
+
+}
+
+label {
+	font-family: Helvetica;
+}
+
+h1 {
+  font-family: Helvetica;
+  color: #fff;
+  font-size: 80px;
+
+}
+
+p {
+  font-family: Helvetica;
+  color: #fff;
+  font-size: 40px;
+
+
+}
+
+.header {
+    text-align: center;
+    background-color: #c6683b;
+    padding: 10px;
+
+}
+
+.container {
+	width: 80%;
+	margin-left: 140px;
+}
+
+td, th {
+	text-align: left;
+
+}
+
+table {
+	width: 100%;
+	margin-left: 25px;
+	margin-bottom: 20px;
+	line-height: 200%;
+}
+
+ .divider {
+    
+    width: 90%;
+    border-bottom: 1px solid black;
+
+}

@@ -1,136 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head lang="en-US">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<title></title>
-</head>
-<body>
- <div class="container">
-   <div class="header">
-   	<h1>All Aboard!</h1>
-   	<p>Clickety Clack, Clickety Clack.</p>
-   </div><br>
-   <div class="trains">
-     <h4>Current Train Schedule</h4>
-     <table class="table">
-     	<thead>
-     	 <tr>
-     	   <th>Train Name</th>
-     	   <th>Destination</th>
-     	   <th>Frequency (min)</th>
-     	   <th>Next Arrival</th>
-     	   <th>Minutes Away</th>
-         </tr>
-     	</thead>
-     	<tbody>
-     	<!--Why is horizontal line above thead?
-     	-->
-     	 <tr>
-     	    <td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 </tr>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 </tr>	
-     	 <tr>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 </tr>	
-     	 <tr>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 </tr>	
-     	 <tr>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 </tr>	
-     	 <tr>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 </tr>	
-     	 <tr>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 	<td>BLAH</td>
-     	 </tr>
-             
-     	</tbody>   
-    
-     </table>
 
-   	</div>
-   	<br>
-   <div class="addTrain">
-     <h4>Add Train</h4>
-     <form id="train-form">
-        <div class="row">
-        	<label for="trainName">Train Name</label><br>
-        	<input id="name" class="input" type="text" name="trainName">
+<head lang="en-US">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>All Aboard!</h1>
+            <p>Clickety Clack, Clickety Clack.</p>
         </div><br>
-        <div class="row">
-        	<label for="destination">Destination</label><br>
-        	<input id="dest" class="input" type="text" name="destination">
-        </div><br>
-        <div class="row">
-        	<label for="firstTrainTime">First Train Time (HH:mm- military time)</label><br>
-        	<input id="firstTTime" class="input" type="text" name="firstTrainTime">
-        </div><br>
-        <div class="row">
-        	<label for="frequency">Frequency (min)</label><br>
-        	<input id="freq" class="input" type="text" name="frequency">
+        <div class="trains">
+            <h4>Current Train Schedule</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency (min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    <tr>
+                        <td class="item" id="train-name"></td>
+                        <td class="item" id="train-destination"></td>
+                        <td class="item" id="Frequency"></td>
+                        <td class="item" id="next-arrival"></td>
+                        <td class="item" id="minutes-away"></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
         </div>
         <br>
-        <input id="subTrain" type="submit" value="submit">
-        
-    </form>
-   	
-   </div>
- 	
- </div>
+        <div class="addTrain">
+            <h4>Add Train</h4>
+            <form id="train-form">
+                <div class="row">
+                    <label for="trainName">Train Name</label><br>
+                    <input id="name" class="input" type="text" name="trainName">
+                </div><br>
+                <div class="row">
+                    <label for="destination">Destination</label><br>
+                    <input id="dest" class="input" type="text" name="destination">
+                </div><br>
+                <div class="row">
+                    <label for="firstTrainTime">First Train Time (HH:mm- military time)</label><br>
+                    <input id="firstTTime" class="input" type="text" name="firstTrainTime">
+                </div><br>
+                <div class="row">
+                    <label for="frequency">Frequency (min)</label><br>
+                    <input id="freq" class="input" type="text" name="frequency">
+                </div>
+                <br>
+                <input id="subTrain" type="submit" value="submit">
 
-<script type="text/javascript">
-	 
-	 var trainName = "";
-	 var destination = "";
-	 var firstTrainTime = "";
-	 var frequency = "";
+            </form>
 
-	 trainName.attr("id", )
-     
-     $("#subTrain").on("click", function(event) {
-     	event.preventDefault();
+        </div>
 
-     	var trainName =
-     	var destination =
-     	var firstTrainTime =
-     	var frequency =
-     });
-
-</script>
-
+    </div>
+    
 
 </body>
 

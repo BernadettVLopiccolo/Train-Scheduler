@@ -94,3 +94,14 @@ table {
     border-bottom: 1px solid black;
 
 }
+
+.remove-train {
+    margin-bottom: 5px;
+	color: #fff;
+	background-color: #006699;
+	height: 25px;
+	width: 100px;
+	font-size: 12px;
+	font-family: Helvetica;
+
+}
